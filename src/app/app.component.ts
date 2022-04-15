@@ -48,7 +48,7 @@ export class AppComponent {
     this.restrictInputLength = '3';
   }
   addUser(event: any) {
-    console.log('button is clicked', event);
+    console.log('buttons is clicked', event);
   }
   callbackTextBox(event: any) {
     console.log('Textbox entered', event);
