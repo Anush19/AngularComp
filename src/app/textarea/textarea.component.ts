@@ -14,6 +14,7 @@ export class TextareaComponent implements OnInit {
     @Input() maxLength: number = 0;
     @Input() disabled: boolean = false;
     @Input() public requiredText: string = '';
+    @Input() formControlName: string = '';
 
     @Input() public labelClass: string = '';
     @Input() public hintClass: string = '';

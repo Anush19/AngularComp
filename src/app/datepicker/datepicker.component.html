@@ -4,6 +4,7 @@
     <div>
         <input class="{{datepickerClass}}"
                type="date"
+               [formControlName]="formControlName"
                [required]="required"
                [attr.aria-describedby]="label"
                [disabled]="disabled"

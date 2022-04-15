@@ -18,6 +18,7 @@ export class DatepickerComponent {
     @Input() showFieldHelpText: boolean = true;
     @Input() required: boolean = false;
     @Input() public helpText: string = '';
+    @Input() formControlName: string = '';
 
     @Output() inputModelChange = new EventEmitter<string>();
 

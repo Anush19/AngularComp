@@ -17,6 +17,7 @@ export class CheckboxComponent {
     @Input() required: boolean = false;
     @Input() public hintClass: string = '';
     @Input() showFieldHelpText: boolean = true;
+    @Input() formControlName: string = '';
 
     @Output() inputModelChange = new EventEmitter<{}>();
 

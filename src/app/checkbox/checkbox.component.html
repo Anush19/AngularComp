@@ -1,6 +1,7 @@
 <div [ngClass]="textStyle">
     <input
             class="{{checkboxClass}}"
+            [formControlName]="formControlName"
             type="checkbox"
             [required]="required"
             [attr.aria-describedby]="label"
