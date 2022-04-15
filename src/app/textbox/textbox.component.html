@@ -14,6 +14,7 @@
                 [attr.maxlength]="restrictInputLength"
                 [attr.minlength]="minInputLength"
                 [disabled]="disabled"
+                [formControlName]="formControlName"
         />
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>

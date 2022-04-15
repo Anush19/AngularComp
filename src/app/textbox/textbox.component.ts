@@ -20,6 +20,7 @@ export class TextboxComponent implements OnInit {
     @Input() hintClass: string = '';
     @Input() required: boolean = false;
     @Input() helpText: string = '';
+    @Input() formControlName: string = '';
     @Input() showFieldHelpText: boolean = true;
     restrictInputLength: string = '';
     minInputLength: string = '';

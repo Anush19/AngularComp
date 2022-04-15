@@ -14,6 +14,7 @@ export class AppComponent {
   @Input() required: boolean = true;
   @Input() maxLength: number = 0;
   selected = [{ id: 3, name: "Volkswagen Ford" }];
+  formControlName = 'Anu'
   sampleDropdowndata = [
     {
       id: 1,
