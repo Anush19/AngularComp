@@ -1,0 +1,85 @@
+<form name="myForm"  onsubmit="validateForm()" method="post" >
+<div>
+    <div>
+        <label> test </label>
+        <div>
+            <div>
+                <app-textbox
+                        [label]="'textbox'"
+                        [maxLength]="4"
+                        [disabled]="false"
+                        (inputModelChange)="callbackTextBox($event)"
+                ></app-textbox>
+            </div>
+            <div>&nbsp;</div>
+
+            <div>
+                <app-textarea
+                        [label]="'textbox'"
+                        [maxLength]="104"
+                        [disabled]="false"
+                        (inputModelChange)="callbackTextBox($event)"
+                ></app-textarea>
+            </div>
+            <div>&nbsp;</div>
+             
+            <div>
+                <app-datepicker
+                        [label]="'Date'"
+                        (inputModelChange)="callbackTextBox($event)"
+                ></app-datepicker>
+            </div>
+            <div>&nbsp;</div>
+
+            <div>
+                <app-checkbox
+                        [label]="'checkbox'"
+                        [required]="true"
+                        (inputModelChange)="callbackTextBox($event)"
+                ></app-checkbox>
+            </div>
+            <div>&nbsp;</div>
+
+            <div>
+                <app-radiobutton
+                        [radioLabel]="'radiobutton'"
+                        [radioButtonGroupName]="'group1'"
+                        (inputModelChange)="callbackTextBox($event)"
+                        [disabled]="false"
+                ></app-radiobutton>
+
+                <app-radiobutton
+                        [radioLabel]="'radiobutton1'"
+                        [radioButtonGroupName]="'group1'"
+                        (inputModelChange)="callbackTextBox($event)"
+                        [disabled]="false"
+                ></app-radiobutton>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <app-dropdown
+                        [multiple]="true"
+                        [bindLabel]="'name'"
+                        [dropdownPosition]="'bottom'"
+                        [placeholder]="'Select'"
+                        [dropdownData]="sampleDropdowndata"
+                        (onSelect)="addUser($event)"
+                >
+                </app-dropdown>
+            </div>
+            <div>
+
+
+                <app-buttons
+                        [buttonType]="'submit'"
+                        [buttonLabel]="'Save'"
+                        [buttonId]="'SaveButton'"
+                        (onClick)="addUser($event)"
+                        [textStyle]="'btn-success'"
+                        [disabled]="false"
+                ></app-buttons>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

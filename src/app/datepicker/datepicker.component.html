@@ -1,0 +1,13 @@
+<div [ngClass]="textStyle">
+    <label class="{{labelClass}}"> {{label}} </label>
+    <span *ngIf="required">{{requiredText}}</span>
+    <div>
+        <input class="{{datepickerClass}}"
+               type="date"
+               [required]="required"
+               [attr.aria-describedby]="label"
+               [disabled]="disabled"
+               (input)="onSearchChange($event.target)"/>
+    </div>
+    <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
+</div>

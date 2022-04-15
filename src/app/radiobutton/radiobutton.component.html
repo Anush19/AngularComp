@@ -1,0 +1,17 @@
+<div [ngClass]="textStyle">
+
+    <input
+            type="radio"
+            class="{{radioClass}}"
+            id="{{radioLabel}}"
+            name="{{radioButtonGroupName}}"
+            value="{{radioLabel}}"
+            [required]="required"
+            [attr.aria-describedby]="radioLabel"
+            (input)="textChange($event.target)"
+            [disabled]="disabled"
+    />
+    <label class="{{labelClass}}" for="{{radioLabel}}">{{radioLabel}}</label>
+    <span *ngIf="required">{{requiredText}}</span>
+    <div *ngIf="showFieldHelpText" id={{radioLabel}} class={{hintClass}}>{{helpText}}</div>
+</div>

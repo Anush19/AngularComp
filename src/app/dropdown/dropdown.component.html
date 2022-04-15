@@ -1,0 +1,48 @@
+<!--<ng-container *ngIf="multiple; else elseTemplate">-->
+<!--  <div>-->
+<!--    <select-->
+
+
+<!--      id="items"-->
+<!--      name="items"-->
+<!--      (change)="selectChange($event.target)"-->
+<!--      multiple="multiple"-->
+<!--    >-->
+<!--      <option [value]="item.id" *ngFor="let item of dropdownData">-->
+<!--        {{ item.name }}-->
+<!--      </option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--</ng-container>-->
+<!--<ng-template #elseTemplate>-->
+<!--  <div>-->
+<!--    <select (change)="selected($event.target)">-->
+<!--      <option>{{ placeholder }}</option>-->
+<!--      <option-->
+<!--        *ngFor="let data of dropdownData"-->
+<!--        value="{{ data.id }}"-->
+<!--        [selected]="data.id"-->
+<!--      >-->
+<!--        {{ data.name }}-->
+<!--      </option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--</ng-template>-->
+
+
+<ng-select
+        [ngClass]="textStyle"
+        [items]="dropdownData"
+        [bindLabel]="bindLabel"
+        [dropdownPosition]="dropdownPosition"
+        [placeholder]="placeholder"
+        appendTo="body"
+        [multiple]="multiple"
+        (change)="detectChangedSelection(selectedItems)"
+        [searchable]="searchable"
+        [searchWhileComposing]="searchable"
+        [clearSearchOnAdd]="true"
+        [typeToSearchText]="typeToSearchText"
+        [virtualScroll]="searchable"
+        [(ngModel)]="selectedItems">
+</ng-select>

@@ -1,0 +1,15 @@
+<div [ngClass]="textStyle">
+    <input
+            class="{{checkboxClass}}"
+            type="checkbox"
+            [required]="required"
+            [attr.aria-describedby]="label"
+            id="{{label}}"
+            name="{{label}}"
+            (input)="textChange($event.target)"
+            [disabled]="disabled"
+    />
+    <label for="{{label}}" class="{{labelClass}}">{{label}}</label>
+    <span *ngIf="required">{{requiredText}}</span>
+    <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
+</div>

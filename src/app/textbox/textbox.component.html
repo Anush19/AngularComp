@@ -1,0 +1,17 @@
+<div [ngClass]="textStyle">
+    <label class="{{labelClass}}" for="{{label}}"> {{label}} </label>
+    <span *ngIf="required">{{requiredText}}</span>
+    <div>
+        <input
+                type="text"
+                [required]="required"
+                class="{{textBoxClass}}"
+                id="{{label}}"
+                [attr.aria-describedby]="label"
+                (input)="textChange($event.target)"
+                [attr.maxlength]="restrictInputLength"
+                [disabled]="disabled"
+        />
+    </div>
+    <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
+</div>
