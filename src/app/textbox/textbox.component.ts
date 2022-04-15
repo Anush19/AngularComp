@@ -15,15 +15,18 @@ export class TextboxComponent implements OnInit {
     @Input() text: string = '';
     @Input() disabled: boolean = false;
     @Input() maxLength: number = 0;
+    @Input() minLength: number = 0;
     @Input() labelClass: string = '';
     @Input() hintClass: string = '';
     @Input() required: boolean = false;
     @Input() helpText: string = '';
     @Input() showFieldHelpText: boolean = true;
     restrictInputLength: string = '';
+    minInputLength: string = '';
 
     ngOnInit() {
         this.restrictInputLength = this.maxLength.toString();
+        this.minInputLength = this.minLength.toString();
     }
 
     textChange(changedEvent: any) {

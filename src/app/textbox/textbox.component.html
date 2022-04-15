@@ -8,9 +8,11 @@
                 [required]="required"
                 class="{{textBoxClass}}"
                 id="{{label}}"
+                name="{{label}}"
                 [attr.aria-describedby]="label"
                 (input)="textChange($event.target)"
                 [attr.maxlength]="restrictInputLength"
+                [attr.minlength]="minInputLength"
                 [disabled]="disabled"
         />
     </div>
