@@ -6,18 +6,19 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
     styleUrls: ['./textbox.component.scss'],
 })
 export class TextboxComponent implements OnInit {
-    @Input() public textStyle: string = '';
-    @Input() public textBoxClass: string = '';
-    @Input() public requiredText: string = '';
+    @Input() textStyle: string = '';
+    @Input() textBoxClass: string = '';
+    @Input() requiredText: string = '';
+    @Input() pattern: string = '';
     @Input() label: string = '';
     @Output() inputModelChange = new EventEmitter<string>();
     @Input() text: string = '';
     @Input() disabled: boolean = false;
     @Input() maxLength: number = 0;
-    @Input() public labelClass: string = '';
-    @Input() public hintClass: string = '';
+    @Input() labelClass: string = '';
+    @Input() hintClass: string = '';
     @Input() required: boolean = false;
-    @Input() public helpText: string = '';
+    @Input() helpText: string = '';
     @Input() showFieldHelpText: boolean = true;
     restrictInputLength: string = '';
 
