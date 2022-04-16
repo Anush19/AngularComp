@@ -1,10 +1,10 @@
-<div [ngClass]="textStyle">
+<div class="form-check {{textStyle}}">
 
     <input
             type="radio"
-            [formControlName]="formControlName"
-            class="{{radioClass}}"
+            class="form-check-input {{radioClass}}"
             id="{{radioLabel}}"
+            [checked]="isChecked"
             name="{{radioButtonGroupName}}"
             value="{{radioLabel}}"
             [required]="required"
@@ -12,7 +12,7 @@
             (input)="textChange($event.target)"
             [disabled]="disabled"
     />
-    <label class="{{labelClass}}" for="{{radioLabel}}">{{radioLabel}}</label>
+    <label class="form-check-label {{labelClass}}" for="{{radioLabel}}">{{radioLabel}}</label>
     <span *ngIf="required">{{requiredText}}</span>
     <div *ngIf="showFieldHelpText" id={{radioLabel}} class={{hintClass}}>{{helpText}}</div>
 </div>

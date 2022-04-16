@@ -7,21 +7,22 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class CheckboxComponent {
 
-    @Input() public textStyle: string = '';
-    @Input() public labelClass: string = '';
-    @Input() public helpText: string = '';
-    @Input() public requiredText: string = '';
-    @Input() public checkboxClass: string = '';
+    @Input() textStyle: string = '';
+    @Input() labelClass: string = '';
+    @Input() helpText: string = '';
+    @Input() requiredText: string = '';
+    @Input() checkboxClass: string = '';
     @Input() label: string = '';
     @Input() disabled: boolean = false;
     @Input() required: boolean = false;
-    @Input() public hintClass: string = '';
+    @Input() hintClass: string = '';
+    @Input() value: string = '';
     @Input() showFieldHelpText: boolean = true;
-    @Input() formControlName: string = '';
-
+    @Input() isChecked: boolean = false;
+    @Input() isHidden: boolean = false;
     @Output() inputModelChange = new EventEmitter<{}>();
 
-    textChange(changedEvent: any) {
+    onEventChange(changedEvent: any) {
         if (changedEvent.value) {
             const data = {
                 name: changedEvent.name,

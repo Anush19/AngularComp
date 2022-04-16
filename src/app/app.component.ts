@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -44,9 +45,18 @@ export class AppComponent {
   ];
   restrictInputLength: string = '';
   @Output() inputModelChange = new EventEmitter<{}>();
+  searchForm: any;
 
   ngOnInit() {
     this.restrictInputLength = '3';
+  }
+  public validate(): void {
+    // if (form.invalid) {
+    //   for (const control of Object.keys(form.controls)) {
+    //     form.controls[control].markAsTouched();
+    //   }
+    //   return;
+    // }
   }
   addUser(event: any) {
     console.log('buttons is clicked', event);

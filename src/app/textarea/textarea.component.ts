@@ -6,21 +6,21 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
     styleUrls: ['./textarea.component.scss'],
 })
 export class TextareaComponent implements OnInit {
-    @Input() public textClass: string = '';
-    @Input() public textareaClass: string = '';
+    @Input() textClass: string = '';
+    @Input() textareaClass: string = '';
     @Input() label: string = '';
-    @Output() inputModelChange = new EventEmitter<string>();
+    @Input() rows: string = '';
     @Input() text: string = '';
     @Input() maxLength: number = 0;
     @Input() disabled: boolean = false;
-    @Input() public requiredText: string = '';
-    @Input() formControlName: string = '';
-
-    @Input() public labelClass: string = '';
-    @Input() public hintClass: string = '';
+    @Input() requiredText: string = '';
+    @Input() placeholder: string = '';
+    @Input() labelClass: string = '';
+    @Input() hintClass: string = '';
     @Input() required: boolean = false;
-    @Input() public helpText: string = '';
+    @Input() helpText: string = '';
     @Input() showFieldHelpText: boolean = true;
+    @Output() inputModelChange = new EventEmitter<string>();
 
     restrictInputLength: string = '';
 

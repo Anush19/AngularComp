@@ -1,13 +1,16 @@
-<div [ngClass]="textStyle">
-    <label class="{{labelClass}}"> {{label}} </label>
+<div class="mb-3 {{textStyle}}">
+    <label class="form-label {{labelClass}}"> {{label}} </label>
     <span *ngIf="required">{{requiredText}}</span>
     <div>
-        <input class="{{datepickerClass}}"
+        <input class="form-control {{datepickerClass}}"
                type="date"
-               [formControlName]="formControlName"
+               [hidden]="isHidden"
+               [min]="minRange"
+               [max]="maxRange"
                [required]="required"
                [attr.aria-describedby]="label"
                [disabled]="disabled"
+               [pattern]="datepickerFormat"
                (input)="onSearchChange($event.target)"/>
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>

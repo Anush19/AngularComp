@@ -11,6 +11,8 @@ import {TextareaComponent} from './textarea/textarea.component';
 import {DatepickerComponent} from './datepicker/datepicker.component';
 import {DropdownComponent} from './dropdown/dropdown.component';
 import {NgSelectModule} from "@ng-select/ng-select";
+import { CloseButtonComponent } from './close-button/close-button.component';
+import { DatalistComponent } from './datalist/datalist.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +25,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
         TextareaComponent,
         DatepickerComponent,
         DropdownComponent,
+        CloseButtonComponent,
+        DatalistComponent,
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, NgSelectModule],
     providers: [],

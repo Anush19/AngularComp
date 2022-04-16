@@ -1,20 +1,23 @@
-<div [ngClass]="textStyle">
-    <label class="{{labelClass}}" for="{{label}}"> {{label}} </label>
+<div class="mb-3 {{textClass}}">
+    <label class="form-label {{labelClass}}" for="{{label}}"> {{label}} </label>
     <span *ngIf="required">{{requiredText}}</span>
     <div>
         <input
                 type="text"
                 pattern="{{pattern}}"
                 [required]="required"
-                class="{{textBoxClass}}"
+                class="form-control {{textBoxClass}}"
                 id="{{label}}"
                 name="{{label}}"
+                [hidden]="isHidden"
+                value="{{textValue}}"
+                [readonly]="readOnly"
+                placeholder="{{placeholder}}"
                 [attr.aria-describedby]="label"
                 (input)="textChange($event.target)"
                 [attr.maxlength]="restrictInputLength"
                 [attr.minlength]="minInputLength"
                 [disabled]="disabled"
-                [formControlName]="formControlName"
         />
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>

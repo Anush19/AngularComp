@@ -17,9 +17,12 @@ export class DatepickerComponent {
     @Input() disabled: boolean = false;
     @Input() showFieldHelpText: boolean = true;
     @Input() required: boolean = false;
+    @Input() isHidden: boolean = false;
     @Input() public helpText: string = '';
-    @Input() formControlName: string = '';
-
+    @Input() public datepickerFormat: string = '';
+    @Input() placeholder: string = '';
+    @Input() minRange: string = '';
+    @Input() maxRange: string = '';
     @Output() inputModelChange = new EventEmitter<string>();
 
     onSearchChange(changedEvent: any) {

@@ -1,14 +1,15 @@
-<div [class]="textClass">
+<div class="mb-3 {{textClass}}">
 
-    <label class="{{labelClass}}" for="{{label}}"> {{label}} </label>
+    <label class="form-label {{labelClass}}" for="{{label}}"> {{label}} </label>
     <span *ngIf="required">{{requiredText}}</span>
     <div>
     <textarea
             type="text"
-            [formControlName]="formControlName"
             [required]="required"
-            class="{{textareaClass}}"
+            class="form-control {{textareaClass}}"
+            placeholder="{{placeholder}}"
             id="{{label}}"
+            rows="{{rows}}"
             [attr.aria-describedby]="label"
             (input)="textChange($event.target)"
             [attr.maxlength]="restrictInputLength"

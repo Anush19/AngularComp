@@ -1,16 +1,17 @@
-<div [ngClass]="textStyle">
+<div class="form-check {{textStyle}}">
     <input
-            class="{{checkboxClass}}"
-            [formControlName]="formControlName"
+            class="form-check-input {{checkboxClass}}"
             type="checkbox"
             [required]="required"
             [attr.aria-describedby]="label"
             id="{{label}}"
             name="{{label}}"
-            (input)="textChange($event.target)"
+            [hidden]="isHidden"
+            (input)="onEventChange($event.target)"
+            [checked]="isChecked"
             [disabled]="disabled"
     />
-    <label for="{{label}}" class="{{labelClass}}">{{label}}</label>
+    <label for="{{label}}" class="form-check-label {{labelClass}}">{{label}}</label>
     <span *ngIf="required">{{requiredText}}</span>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
 </div>
