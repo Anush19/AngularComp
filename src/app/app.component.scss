@@ -1,0 +1,21 @@
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+body {
+   
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+}
+
+.bootstrap-select select.bs-select-hidden select.bs-select-hidden .select .selectpicker {
+    display: inherit !important ;
+}
+
+.btn.dropdown-toggle:focus {
+    outline: none !important;
+}

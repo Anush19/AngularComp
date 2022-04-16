@@ -9,10 +9,10 @@ import {CheckboxComponent} from './checkbox/checkbox.component';
 import {RadiobuttonComponent} from './radiobutton/radiobutton.component';
 import {TextareaComponent} from './textarea/textarea.component';
 import {DatepickerComponent} from './datepicker/datepicker.component';
-import {DropdownComponent} from './dropdown/dropdown.component';
-import {NgSelectModule} from "@ng-select/ng-select";
 import { CloseButtonComponent } from './close-button/close-button.component';
 import { DatalistComponent } from './datalist/datalist.component';
+import { MultiDropdownComponent } from './multi-dropdown/multi-dropdown.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -24,11 +24,11 @@ import { DatalistComponent } from './datalist/datalist.component';
         RadiobuttonComponent,
         TextareaComponent,
         DatepickerComponent,
-        DropdownComponent,
         CloseButtonComponent,
         DatalistComponent,
+        MultiDropdownComponent,
     ],
-    imports: [BrowserModule, FormsModule, ReactiveFormsModule, NgSelectModule],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent],
 })
