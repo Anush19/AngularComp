@@ -31,7 +31,6 @@ export class TextareaComponent implements OnInit {
 
     textChange(changedEvent: any) {
         if (changedEvent.value) {
-            console.log(changedEvent.value);
             this.inputModelChange.emit(changedEvent.value);
         }
     }

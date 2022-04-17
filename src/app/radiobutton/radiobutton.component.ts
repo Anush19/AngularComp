@@ -24,9 +24,7 @@ export class RadiobuttonComponent {
 
     textChange(changedEvent: any) {
         if (changedEvent.value) {
-            console.log(changedEvent.value);
             const data = {name: changedEvent.name, value: changedEvent.value};
-            console.log(data);
             this.inputModelChange.emit(data);
         }
     }

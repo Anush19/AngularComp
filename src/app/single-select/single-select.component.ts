@@ -25,7 +25,6 @@ export class SingleSelectComponent {
   
 
   detectChangedSelection() {
-    console.log(this.selectedItems);
     this.onSelect.emit(this.selectedItems);
   }
 

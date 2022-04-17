@@ -29,7 +29,6 @@ export class CheckboxComponent {
                 name: changedEvent.name,
                 checked: changedEvent.checked,
             };
-            console.log(data);
             this.inputModelChange.emit(data);
         }
     }
