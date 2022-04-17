@@ -1,9 +1,9 @@
-<div class="dropdown">
-    <button class="btn btn-block text-left dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+<div class="dropdown  mt-3">
+    <button class="form-select {{dropDownClass}}" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false" data-display="static" [title]="item?.name || ''"
         [ngClass]="{ 'border border-danger': showError }">
         <span>
-            {{item ? item.name : (placeholder ? placeholder : 'Select')}}
+            {{item ? item[bindLabel] : (placeholder ? placeholder : 'Select')}}
         </span>
     </button>
     <div class="dropdown-menu">
@@ -12,11 +12,6 @@
         <div *ngIf="showSearch" class="dropdown-item dropdown-item-search" onclick="event.stopPropagation();">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
-                <div class="input-group-append">
-                    <span class="input-group-text h-100">
-                        <img src="/assets/icons/search.svg" alt="" title="Bootstrap">
-                    </span>
-                </div>
             </div>
         </div>
 
@@ -24,20 +19,20 @@
         <div class="dropdown-items">
             <ng-container *ngFor="let item of filtered; let i = index; trackBy: trackById">
                 <div class="dropdown-item" *ngIf="item.visible" (click)='onChange(item)'>
-                    {{item.name}}
+                    {{item[bindLabel]}}
                 </div>
             </ng-container>
         </div>
 
         <!-- not found -->
         <div class="dropdown-item" *ngIf="isEmpty">
-            No item found 🍽
+            No item found
         </div>
 
         <!-- status -->
         <div *ngIf="showStatus" class="dropdown-count text-dark">
-            <span><b>Count:</b> {{_items.length}}</span>
-            <span *ngIf="search"><b>Search Count:</b> {{filtered.length}}</span>
+            <span><strong>Count:</strong> {{_items.length}}</span>
+            <span *ngIf="search"><strong>Search Count:</strong> {{filtered.length}}</span>
         </div>
     </div>
 </div>

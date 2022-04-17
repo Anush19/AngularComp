@@ -10,11 +10,12 @@ import { Item } from './dropdown.model';
 export class DropdownComponent {
 
     _items: Item[] = [];
-
+    @Input() dropDownClass: string;
     @Input() placeholder: string;
     @Input() showSearch = true;
     @Input() showStatus = true;
     @Input() showError = false;
+    @Input() bindLabel: string = 'name';
     @Output() itemChange = new EventEmitter<Item>(null);
 
     @Input('items')
