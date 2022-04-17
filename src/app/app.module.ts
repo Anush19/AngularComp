@@ -14,6 +14,7 @@ import { DatalistComponent } from './datalist/datalist.component';
 import { MultiDropdownComponent } from './multi-dropdown/multi-dropdown.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SingleSelectComponent } from './single-select/single-select.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { SingleSelectComponent } from './single-select/single-select.component';
         DatalistComponent,
         MultiDropdownComponent,
         SingleSelectComponent,
+        DropdownComponent
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
     providers: [],

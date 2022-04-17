@@ -44,6 +44,13 @@
 
             </div>
             <div>&nbsp;</div>
+            <app-dropdown 
+            [items]="items" 
+            [showSearch]="showSearch" 
+            [showStatus]="showStatus" 
+            [showError]="showError" 
+            (itemChange)="addUser($event)">
+        </app-dropdown>
 
             <div>
                 <app-textarea
