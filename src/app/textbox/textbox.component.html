@@ -18,6 +18,7 @@
                 [attr.maxlength]="restrictInputLength"
                 [attr.minlength]="minInputLength"
                 [disabled]="disabled"
+                [ngClass]="{ 'border border-danger': showError }"
         />
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>

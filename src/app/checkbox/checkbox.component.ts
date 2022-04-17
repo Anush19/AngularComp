@@ -20,6 +20,7 @@ export class CheckboxComponent {
     @Input() showFieldHelpText: boolean = true;
     @Input() isChecked: boolean = false;
     @Input() isHidden: boolean = false;
+    @Input() showError = false;
     @Output() inputModelChange = new EventEmitter<{}>();
 
     onEventChange(changedEvent: any) {

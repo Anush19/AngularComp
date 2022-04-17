@@ -13,6 +13,7 @@ import { CloseButtonComponent } from './close-button/close-button.component';
 import { DatalistComponent } from './datalist/datalist.component';
 import { MultiDropdownComponent } from './multi-dropdown/multi-dropdown.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SingleSelectComponent } from './single-select/single-select.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
         CloseButtonComponent,
         DatalistComponent,
         MultiDropdownComponent,
+        SingleSelectComponent,
     ],
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
     providers: [],

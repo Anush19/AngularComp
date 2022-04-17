@@ -10,6 +10,7 @@
             (input)="onEventChange($event.target)"
             [checked]="isChecked"
             [disabled]="disabled"
+            [ngClass]="{ 'border border-danger': showError }"
     />
     <label for="{{label}}" class="form-check-label {{labelClass}}">{{label}}</label>
     <span *ngIf="required">{{requiredText}}</span>

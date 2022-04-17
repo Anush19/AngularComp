@@ -1,0 +1,15 @@
+<div class="dropdown">
+    <label class="hidden-label" for="{{label}}">{{placeholder}}</label>
+    <span *ngIf="required">{{requiredText}}</span>
+    <select [ngClass]="{ 'border border-danger': showError }" class="form-select selectboxclass form-control-sm {{selectStyle}}" type="text" id="{{label}}" [required]="required"
+        title="Please Choose one item" [disabled]="disabled" name="selectedItems" [(ngModel)]="selectedItems"
+        (change)="detectChangedSelection()" [attr.aria-describedby]="label" aria-label="single-select" >
+        <span>
+            {{(placeholder ? placeholder : 'Select')}}
+        </span>
+        <option value="" class="text-hide" id="placeholder" selected disabled>{{placeholder}}</option>
+        <option *ngFor="let data of dropdownData" id="{{data.id}}" [selected]="selectedItems === data" [ngValue]="data">{{data[bindLabel]}}
+        </option>
+    </select>
+    <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
+</div>

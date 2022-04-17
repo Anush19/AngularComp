@@ -13,12 +13,22 @@
                         placeholder="Select Foods"
                         (itemChange)="addUser($event)">
                 </app-multi-dropdown>
-                <div class="card mb-2 bg-light">
+                <!-- <div class="card mb-2 bg-light">
                     <div class="card-body">
                         <pre class="mb-0" style="max-height: 180px"><code>{{ checkedItems | json }}</code></pre>
                     </div>
-                </div>
+                </div> -->
 
+
+                <app-single-select
+                [dropdownData]="items"
+                [placeholder]="'Select'"
+                [disabled]="false"
+                [label]="'testid'"
+                [bindLabel]="'name'"
+                [showError]="true"
+                [selectedItems]="[{id: 4, name: 'Tangerine 🍊'}]"
+                ></app-single-select>
                 <app-textbox
                         [label]="'textbox'"
                         [id]="formControlName"
@@ -28,6 +38,7 @@
                         [readOnly]="false"
                         [placeholder]="'Test'"
                         [textValue]="'Try this out'"
+                        [showError]="true"
                         (inputModelChange)="callbackTextBox($event)"
                 ></app-textbox>
 

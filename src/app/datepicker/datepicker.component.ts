@@ -23,6 +23,7 @@ export class DatepickerComponent {
     @Input() placeholder: string = '';
     @Input() minRange: string = '';
     @Input() maxRange: string = '';
+    @Input() showError = false;
     @Output() inputModelChange = new EventEmitter<string>();
 
     onSearchChange(changedEvent: any) {

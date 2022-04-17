@@ -13,6 +13,7 @@
             [attr.aria-describedby]="label"
             (input)="textChange($event.target)"
             [attr.maxlength]="restrictInputLength"
+            [ngClass]="{ 'border border-danger': showError }"
             [disabled]="disabled">{{text}}
       </textarea>
     </div>

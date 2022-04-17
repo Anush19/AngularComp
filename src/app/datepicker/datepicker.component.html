@@ -11,6 +11,7 @@
                [attr.aria-describedby]="label"
                [disabled]="disabled"
                [pattern]="datepickerFormat"
+               [ngClass]="{ 'border border-danger': showError }"
                (input)="onSearchChange($event.target)"/>
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>

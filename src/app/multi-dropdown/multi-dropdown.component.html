@@ -11,7 +11,7 @@
         <!-- search -->
         <div *ngIf="showSearch" class="dropdown-item dropdown-item-search">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search">
+                <input type="text" class="form-control" placeholder="{{placeholder}}" [(ngModel)]="search">
 
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <input type="checkbox" class="custom-control-input" [id]="'chkItem' + all.id"
                            (change)='onChange($event, all)' [checked]="all.checked">
                     <label class="custom-control-label" [for]="'chkItem' + all.id">
-                        <span class="pl-2" [title]="all.name">{{all.name}}</span>
+                        <span class="pl-2" [title]="all[bindLabel]">{{all[bindLabel]}}</span>
                     </label>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                         <input type="checkbox" class="custom-control-input" [id]="'chkItem' + item.id"
                                (change)='onChange($event, item)' [checked]="item.checked">
                         <label class="custom-control-label" [for]="'chkItem' + item.id">
-                            <span  class="pl-2" [title]="item.name">{{item.name}}</span>
+                            <span  class="pl-2" [title]="item[bindLabel]">{{item[bindLabel]}}</span>
                         </label>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 
         <!-- not found -->
         <div class="dropdown-item" *ngIf="isEmpty">
-            No item found 🍽
+            No item found
         </div>
 
         <!-- status -->

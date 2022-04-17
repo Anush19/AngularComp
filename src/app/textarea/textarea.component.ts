@@ -20,6 +20,7 @@ export class TextareaComponent implements OnInit {
     @Input() required: boolean = false;
     @Input() helpText: string = '';
     @Input() showFieldHelpText: boolean = true;
+    @Input() showError = false;
     @Output() inputModelChange = new EventEmitter<string>();
 
     restrictInputLength: string = '';

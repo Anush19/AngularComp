@@ -1,7 +1,7 @@
 <!--<label for="exampleDataList" class="form-label">Datalist example</label>-->
 <!--<input type="text" class="form-control" list="datalistOptions" id="exampleDataList" multiple="multiple"-->
 <!--       placeholder="Type to search..." name="data" [(ngModel)] ="selectedItems" (change)="detectChangedSelection($event.target)">-->
-<select class="form-select" aria-label="multiple select example" data-live-search="true" id="exampleDataList" name="data" multiple  (change)="detectChangedSelection($event.target)">
+<select class="form-select" aria-label="multiple select" data-live-search="true" id="dataList" name="data" multiple  (change)="detectChangedSelection($event.target)">
 <!--<datalist id="datalistOptions">-->
     <option *ngFor="let data of dropdownData" id="{{data.id}}" selected="{{data}}" [ngValue]="data.name">{{data.name}}
     </option>
@@ -9,6 +9,16 @@
 </select>
 <!--{{selectedItems | json}}-->
 
+
+
+<!-- <label for="exampleDataList" class="form-label">Datalist example</label>
+<input type="text" class="form-control" autocomplete="off" list="datalistOptions" id="exampleDataList"
+    placeholder="Type to search..." name="data" [(ngModel)]="selectedItems"
+    (change)="detectChangedSelection($event.target)" (keyup)="detectChangedSelection($event.target)">
+<datalist id="datalistOptions">
+    <option *ngFor="let data of dropdownData" id="{{data.id}}" selected="{{data}}" [ngValue]="data.name">{{data.name}}
+    </option>
+</datalist> -->
 
 <!--<select name="my-select" [(ngModel)]="mySelect" (change)="detectChangedSelection($event.target)" multiple="multiple">-->
 <!--    <option [value]="item" *ngFor="let item of dropdownData">-->

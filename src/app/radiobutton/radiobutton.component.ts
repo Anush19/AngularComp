@@ -18,7 +18,7 @@ export class RadiobuttonComponent {
     @Input() showFieldHelpText: boolean = true;
     @Input() public requiredText: string = '';
     @Input() isChecked: boolean = false;
-
+    @Input() showError = false;
     @Output() inputModelChange = new EventEmitter<{}>();
 
 

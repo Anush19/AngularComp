@@ -11,6 +11,7 @@
             [attr.aria-describedby]="radioLabel"
             (input)="textChange($event.target)"
             [disabled]="disabled"
+            [ngClass]="{ 'border border-danger': showError }"
     />
     <label class="form-check-label {{labelClass}}" for="{{radioLabel}}">{{radioLabel}}</label>
     <span *ngIf="required">{{requiredText}}</span>

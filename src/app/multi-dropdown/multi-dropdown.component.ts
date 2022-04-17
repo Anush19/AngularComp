@@ -16,6 +16,7 @@ export class MultiDropdownComponent {
     @Input() showAll = true;
     @Input() showStatus = true;
     @Input() showError = false;
+    @Input() bindLabel: string = 'name';
     @Output() itemChange = new EventEmitter<any>(null);
 
     @Input('items')

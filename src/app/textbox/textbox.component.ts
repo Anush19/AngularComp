@@ -24,6 +24,7 @@ export class TextboxComponent implements OnInit {
     @Input() helpText: string = '';
     @Input() placeholder: string = '';
     @Input() showFieldHelpText: boolean = true;
+    @Input() showError = false;
     @Output() inputModelChange = new EventEmitter<string>();
     restrictInputLength: string = '';
     minInputLength: string = '';
