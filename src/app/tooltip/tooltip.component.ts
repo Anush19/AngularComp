@@ -1,11 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-    selector: 'app-textbox',
-    templateUrl: './textbox.component.html',
-    styleUrls: ['./textbox.component.scss'],
+    selector: 'app-tooltip',
+    templateUrl: './tooltip.component.html',
 })
-export class TextboxComponent implements OnInit {
+export class Tooltip implements OnInit {
     @Input() textClass: string = '';
     @Input() textBoxClass: string = '';
     @Input() requiredText: string = '';
