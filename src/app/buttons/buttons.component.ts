@@ -10,6 +10,9 @@ export class ButtonsComponent  {
   @Input() public buttonId: string = '';
   @Input() public buttonType: string = '';
   @Input() public buttonLabel: string = '';
+  @Input() public tooltipPosition: any = '';
+  @Input() public tooltipText: string = '';
+  @Input() public tooltipType: string = 'tooltip';
   @Input() public disabled: boolean = false;
   @Output() onClick = new EventEmitter<string>();
 

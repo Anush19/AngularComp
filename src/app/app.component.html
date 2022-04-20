@@ -20,8 +20,9 @@
                 </app-single-select>
                 <app-textbox [label]="'textbox'" [id]="formControlName" [maxLength]="4" [minLength]="2"
                     [disabled]="false" [readOnly]="false" [placeholder]="'Test'" [textValue]="'Try this out'"
-                    [showError]="true" (inputModelChange)="callbackTextBox($event)" ><app-tooltip></app-tooltip></app-textbox>
-                    
+                    [showError]="true" (inputModelChange)="callbackTextBox($event)" uib-tooltip="Required*"
+                    tooltip-placement="left" tooltip-trigger="none"></app-textbox>
+                <app-tooltip></app-tooltip>
 
             </div>
             <div>&nbsp;</div>
@@ -41,8 +42,9 @@
             <div>&nbsp;</div>
 
             <div>
-                <app-checkbox [label]="'checkbox'" [value]="'testId'" [isChecked]="true" [required]="true" [labelClass]="'form-check-label'"
-                    [checkboxClass]="'form-check-input'" [textStyle]="'form-check form-switch'" [disabled]="false"
+                <app-checkbox [label]="'checkbox'" [value]="'testId'" [isChecked]="true" [required]="true"
+                    [labelClass]="'form-check-label'" [checkboxClass]="'form-check-input'"
+                    [textStyle]="'form-check form-switch'" [disabled]="false"
                     (inputModelChange)="callbackTextBox($event)"></app-checkbox>
             </div>
             <div>&nbsp;</div>
@@ -60,7 +62,9 @@
 
                 <app-close-button [disabled]="false" (onClick)="addUser($event)"></app-close-button>
                 <app-buttons [buttonType]="'submit'" [buttonLabel]="'Save'" [buttonId]="'SaveButton'"
-                    (onClick)="addUser($event)" [textStyle]="'btn-success'" [disabled]="false"></app-buttons>&ndash;&gt;
+                    (onClick)="addUser($event)" [textStyle]="'btn-success'" [tooltipPosition]='' [tooltipType]="'popover'" [tooltipText]="'Testpopover'" [disabled]="false"></app-buttons>
+                <app-tooltip></app-tooltip>
+
             </div>
         </div>
     </div>
@@ -69,12 +73,7 @@
 <form class="row g-3">
     <div class="col-md-4">
         <label for="validationServer01" class="form-label">First name</label>
-        <!-- <app-tooltip 
-        [tooltipId]="'testid'"
-        [tooltipLabel]="'A'"
-        [tooltipPosition]="'left'"
-        [tooltipText]="'hey this is a testing thing'"
-        ></app-tooltip> -->
+       
         <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
         <div class="valid-feedback">
             Looks good!
@@ -111,16 +110,8 @@
         <app-dropdown [items]="items" [dropDownClass]="'dropdown-toggle'" [showSearch]="showSearch"
             [showStatus]="showStatus" [showError]="showError" (itemChange)="addUser($event)">
         </app-dropdown>
-        <app-single-select
-        [bindLabel]="'name'"
-        [disabled]="false"
-        [dropdownData]="items"
-        [label]="'State'"
-        (itemChange)="addUser($event)"
-        [selectStyle]="'form-select'"
-        [required]="true"
-        [showError]="true"
-        >
+        <app-single-select [bindLabel]="'name'" [disabled]="false" [dropdownData]="items" [label]="'State'"
+            (itemChange)="addUser($event)" [selectStyle]="'form-select'" [required]="true" [showError]="true">
 
         </app-single-select>
         <!-- <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback"
@@ -153,8 +144,8 @@
     <div class="col-12">
         <!--         <button class="btn btn-primary" type="submit">Submit form</button>
  -->
-        <app-buttons [buttonId]="'save'" (onClick)="addUser($event)" [buttonLabel]="'Save'" [buttonType]="'submit'" [disabled]="false"
-            [textStyle]="'btn btn-primary'"></app-buttons>
+        <app-buttons [buttonId]="'save'" (onClick)="addUser($event)" [buttonLabel]="'Save'" [buttonType]="'submit'"
+            [disabled]="false" [textStyle]="'btn btn-primary'"></app-buttons>
     </div>
 </form>
 
@@ -179,51 +170,53 @@
 
 
 
-<div *ngFor="let program of programList;let i=index" class="card standard mb-3" >
+<div *ngFor="let program of programList;let i=index" class="card standard mb-3">
 
     <div class="card-body">
-    <div class="form-check">
-    <app-checkbox [label]="program.name" [value]="program.id" [isChecked]="program.selected" ></app-checkbox>
-    <!-- <input type="checkbox" id="program_id" class="form-check-input" [checked]="program.selected" (clicked)="onCheckboxChange(program.id,i,program.selected)" [value]="program.id" />
+        <div class="form-check">
+            <app-checkbox [label]="program.name" [value]="program.id" [isChecked]="program.selected"></app-checkbox>
+            <!-- <input type="checkbox" id="program_id" class="form-check-input" [checked]="program.selected" (clicked)="onCheckboxChange(program.id,i,program.selected)" [value]="program.id" />
     
     
     
     <label for="program_id" class="form-check-label" for="chkHealthCareCoverage" (clicked)="onCheckboxChange(program.id,i,program.selected)"> {{program.name}}</label> -->
-    
-    </div>
-    <!-- <p>{{program.program_desc}}</p>
+
+        </div>
+        <!-- <p>{{program.program_desc}}</p>
     <a href="program.program_link">{{program.program_link_desc}}</a> -->
     </div>
-    
-    </div>
-    <div class="card">
+
+</div>
+<div class="card">
     <div class="card-body">
-    <div class="form-check">
-    
-    <div *ngFor="let program of programList;let i=index" class="card standard mb-3" (click)="onCheckboxChange(program.id,i,program.selected)">
-    
-    
-    
-    <div class="card-body">
-    <div class="form-check">
-    <!-- <input type="checkbox" id="program_id" class="form-check-input" [checked]="program.selected" (clicked)="onCheckboxChange(program.id,i,program.selected)" [value]="program.id" />
+        <div class="form-check">
+
+            <div *ngFor="let program of programList;let i=index" class="card standard mb-3"
+                (click)="onCheckboxChange(program.id,i,program.selected)">
+
+
+
+                <div class="card-body">
+                    <div class="form-check">
+                        <!-- <input type="checkbox" id="program_id" class="form-check-input" [checked]="program.selected" (clicked)="onCheckboxChange(program.id,i,program.selected)" [value]="program.id" />
     
     
     
     <label for="program_id" class="form-check-label" for="chkHealthCareCoverage" (clicked)="onCheckboxChange(program.id,i,program.selected)"> {{program.name}}</label> -->
-    <app-checkbox [value]="program.id" [checkboxClass]="'form-check-input'" [labelClass]="'form-check-label'" [label]="program.name" [isChecked]="program.selected" [value]="program.id" [required]="true" (inputModelChange)="alert($event)" ></app-checkbox>
-    </div>
-    <!-- <p>{{program.program_desc}}</p>
+                        <app-checkbox [value]="program.id" [checkboxClass]="'form-check-input'"
+                            [labelClass]="'form-check-label'" [label]="program.name" [isChecked]="program.selected"
+                            [value]="program.id" [required]="true" (inputModelChange)="alert($event)"></app-checkbox>
+                    </div>
+                    <!-- <p>{{program.program_desc}}</p>
     <a href="program.program_link">{{program.program_link_desc}}</a> -->
+                </div>
+
+            </div>
+            <input class="form-check-input" type="checkbox" value="" id="chkHealthCareCoverage"
+                onClick="event.stopPropagation();">
+            <label class="form-check-label" for="chkHealthCareCoverage" onClick="event.stopPropagation();">
+                Health Care Coverage
+            </label>
+        </div>
     </div>
-    
-    </div>
-    <input class="form-check-input" type="checkbox" value="" id="chkHealthCareCoverage" onClick="event.stopPropagation();">
-    <label class="form-check-label" for="chkHealthCareCoverage" onClick="event.stopPropagation();">
-    Health Care Coverage
-    </label>
-    </div>
-    </div>
-    </div>
-    
-    
+</div>

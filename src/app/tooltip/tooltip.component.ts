@@ -29,8 +29,7 @@ export class Tooltip implements OnInit {
     minInputLength: string = '';
 
     ngOnInit() {
-        this.restrictInputLength = this.maxLength.toString();
-        this.minInputLength = this.minLength.toString();
+       
     }
 
     textChange(changedEvent: any) {
