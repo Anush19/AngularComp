@@ -108,6 +108,9 @@ export class AppComponent implements OnInit{
     }
     ];
   items: Item[] = [];
+  testSelected=[{
+    id: 3, name: 'Watermelon 🍉', visible: true
+  }];
   itemList=[
     {
       "id": 1,

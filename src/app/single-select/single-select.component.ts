@@ -13,7 +13,7 @@ export class SingleSelectComponent {
   @Input() bindLabel: string = 'name';
   @Input() label: string = '';
   @Input() dropdownData: any;
-  @Input() selectedItems: any;
+  @Input() selectedItem: any ='select';
   @Input() required: boolean = false;
   @Input() requiredText: string = '';
   @Input() showFieldHelpText: boolean = true;
@@ -22,10 +22,10 @@ export class SingleSelectComponent {
   @Input() showError = false;
 
   @Output() onSelect = new EventEmitter<{}>();
-  
 
-  detectChangedSelection() {
-    this.onSelect.emit(this.selectedItems);
+  detectChangedSelection(event: any) {
+    console.log(event.value);
+    this.onSelect.emit(this.selectedItem);
   }
 
 }
