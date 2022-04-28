@@ -24,8 +24,7 @@ export class SingleSelectComponent {
   @Output() onSelect = new EventEmitter<{}>();
 
   detectChangedSelection(event: any) {
-    console.log(event.value);
-    this.onSelect.emit(this.selectedItem);
+    this.onSelect.emit(event.value);
   }
 
 }

@@ -2,10 +2,10 @@
     <label class="hidden-label" for="{{label}}">{{placeholder}}</label>
     <select [ngClass]="{ 'border border-danger': showError }" class="form-select selectboxclass form-control-sm {{selectStyle}}" type="text" id="{{label}}" [required]="required"
         [disabled]="disabled" name="selectedItems" 
-        (change)="detectChangedSelection($event)">
+        (change)="detectChangedSelection($event.target)">
        
         <option value="" class="text-hide" id="placeholder" selected disabled>{{placeholder}}</option>
-        <option *ngFor="let data of dropdownData" id="{{data.id}}"  [value]="data">{{data[bindLabel]}}
+        <option *ngFor="let data of dropdownData" id="{{data.id}}" [selected]="selectedItem.id === data.id" [value]="data.id">{{data[bindLabel]}}
         </option>
     </select>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
