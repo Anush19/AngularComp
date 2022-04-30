@@ -20,7 +20,8 @@ export class SingleSelectComponent {
   @Output() onSelect = new EventEmitter<{}>();
 
   detectChangedSelection(event: any) {
-    this.onSelect.emit(event.value);
+    const currentSelectedItem = this.dropdownData.find(item => item.id === event.value)
+    this.onSelect.emit(currentSelectedItem);
   }
 
 }
