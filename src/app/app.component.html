@@ -1,11 +1,5 @@
-<app-single-select [bindLabel]="'name'" [disabled]="false" [dropdownData]="programList" [label]="'State'"
-            (onSelect)="addUser($event)" [selectedItem]="testSelected" [selectStyle]="'form-select'" [required]="true" [showError]="true">
+<app-single-select [bindLabel]="'name'" [disabled]="false" [dropdownData]="programList" [dropdownlabel]="'State'"
+    (onSelect)="addUser($event)" [selectedItem]="testSelected" [selectStyle]="'form-select'" [required]="true"
+    [showError]="true">
 
-        </app-single-select>
-
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+</app-single-select>

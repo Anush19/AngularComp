@@ -108,9 +108,18 @@ export class AppComponent implements OnInit{
     }
     ];
   items: Item[] = [];
-  testSelected=[{
-    id: 3, name: 'Watermelon 🍉', visible: true
-  }];
+  testSelected={
+      id:"CI",
+      selected:false,
+      name:"Help With Childcare Costs",
+      program_id:"ccId",
+      program_desc:"Provides child care financial assistance for eligible families",
+      program_link:"www.google.com",
+      program_link_desc:"More Information About Childcare Assistance"
+      
+      
+      
+  };
   itemList=[
     {
       "id": 1,

@@ -11,14 +11,10 @@ export class SingleSelectComponent {
   @Input() placeholder: string = 'Select';
   @Input() disabled: boolean = false;
   @Input() bindLabel: string = 'name';
-  @Input() label: string = '';
+  @Input() dropdownlabel: string = '';
   @Input() dropdownData: any;
-  @Input() selectedItem: any ='select';
+  @Input() selectedItem: any;
   @Input() required: boolean = false;
-  @Input() requiredText: string = '';
-  @Input() showFieldHelpText: boolean = true;
-  @Input() hintClass: string = '';
-  @Input() helpText: string = '';
   @Input() showError = false;
 
   @Output() onSelect = new EventEmitter<{}>();
