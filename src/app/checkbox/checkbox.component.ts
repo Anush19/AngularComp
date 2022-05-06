@@ -21,6 +21,7 @@ export class CheckboxComponent {
     @Input() isChecked: boolean = false;
     @Input() isHidden: boolean = false;
     @Input() showError = false;
+    @Input() formCtrlName: string = '';
     @Output() inputModelChange = new EventEmitter<{}>();
 
     onEventChange(changedEvent: any) {

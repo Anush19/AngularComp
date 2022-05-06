@@ -7,6 +7,7 @@
             id="{{label}}"
             name="{{label}}"
             [hidden]="isHidden"
+            formControlName="{{formCtrlName}}"
             (input)="onEventChange($event.target)"
             [checked]="isChecked"
             [disabled]="disabled"

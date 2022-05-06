@@ -9,6 +9,7 @@ export class TextboxComponent implements OnInit {
     @Input() textClass: string = '';
     @Input() textBoxClass: string = '';
     @Input() requiredText: string = '';
+    @Input() formCtrlName: string = '';
     @Input() pattern: string = '';
     @Input() label: string = '';
     @Input() text: string = '';

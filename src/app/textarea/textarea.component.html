@@ -10,6 +10,7 @@
             placeholder="{{placeholder}}"
             id="{{label}}"
             rows="{{rows}}"
+            formControlName="{{formCtrlName}}"
             [attr.aria-describedby]="label"
             (input)="textChange($event.target)"
             [attr.maxlength]="restrictInputLength"

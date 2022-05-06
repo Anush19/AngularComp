@@ -14,6 +14,7 @@ export class ButtonsComponent  {
   @Input() public tooltipText: string = '';
   @Input() public tooltipType: string = 'tooltip';
   @Input() public disabled: boolean = false;
+  @Input() formCtrlName: string = '';
   @Output() onClick = new EventEmitter<string>();
 
   clicked() {
