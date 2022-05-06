@@ -81,7 +81,10 @@
     <div class="col-md-4">
         <label for="validationServer01" class="form-label">First name</label>
        
-        <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+        <app-textbox [label]="'textbox'" [formCtrlName]="'firstName'" [id]="formControlName" [maxLength]="4" [minLength]="2"
+        [disabled]="false" [readOnly]="false" [placeholder]="'Test'" [textValue]="'Try this out'"
+        [showError]="true" (inputModelChange)="callbackTextBox($event)" uib-tooltip="Required*"
+        tooltip-placement="left" tooltip-trigger="none"></app-textbox>
         <div class="valid-feedback">
             Looks good!
         </div>
