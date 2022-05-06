@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import { FormControl, FormGroup, NgForm } from "@angular/forms";
 import { AppService } from './app.service';
 import { Item } from './multi-dropdown/multi-dropdown.model';
 
@@ -8,7 +8,20 @@ import { Item } from './multi-dropdown/multi-dropdown.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+  bioSection = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    age: new FormControl(''),
+    stackDetails: new FormGroup({
+      stack: new FormControl(''),
+      experience: new FormControl('')
+    }),
+    address: new FormGroup({
+      country: new FormControl(''),
+      city: new FormControl('')
+    })
+  });
   @Input() public textStyle: { [key: string]: string } = {};
   @Input() public textClass: { [key: string]: boolean } = {};
   @Input() radiolabel: string = '';
@@ -23,104 +36,104 @@ export class AppComponent implements OnInit{
   showError = false;
   showAll = true;
   showStatus = true;
-  programList=[{
-    id:"HS",
-    selected:false,
-    name:"Health Care Coverage",
-    program_id:"hsId",
-    program_desc:"Includes CHIP, Medical Assistance, Medicaid for Former Foster Care Youth, Mental Health/Substance Abuse, Pennsylvania's Health Insurance Marketplace (Pennie)",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About Health Care Coverage"
-    },
-    {
-    id:"FS",
-    selected:false,
-    name:"Food Assistance",
-    program_id:"fsId",
-    program_desc:"Supplemental Nutrition Assistance Program (SNAP)",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About Food Assistance"
-    
-    
-    
-    },
-    {
-    id:"CA",
-    selected:false,
-    name:"Cash Assistance",
-    program_id:"caId",
-    program_desc:"Series of programs that provide cash to individuals or families in need.",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About Cash Assistance"
-    
-    
-    
-    },
-    {
-    id:"BL",
-    selected:false,
-    name:"Free or Reduced Price School Meals",
-    program_id:"rpId",
-    program_desc:"Provides low-cost or free school lunches to eligible children.",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About Free or Reduced Price School Meals"
-    
-    
-    
-    },
-    {
-    id:"LH",
-    selected:false,
-    name:"Help With Paying Your Heating Bill",
-    program_id:"liId",
-    program_desc:"Low-Income Home Energy Assistance Program (LIHEAP) provides child care financial assistance for eligible families",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About the LIHEAP Program"
-    
-    
-    
-    }
+  programList = [{
+    id: "HS",
+    selected: false,
+    name: "Health Care Coverage",
+    program_id: "hsId",
+    program_desc: "Includes CHIP, Medical Assistance, Medicaid for Former Foster Care Youth, Mental Health/Substance Abuse, Pennsylvania's Health Insurance Marketplace (Pennie)",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Health Care Coverage"
+  },
+  {
+    id: "FS",
+    selected: false,
+    name: "Food Assistance",
+    program_id: "fsId",
+    program_desc: "Supplemental Nutrition Assistance Program (SNAP)",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Food Assistance"
+
+
+
+  },
+  {
+    id: "CA",
+    selected: false,
+    name: "Cash Assistance",
+    program_id: "caId",
+    program_desc: "Series of programs that provide cash to individuals or families in need.",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Cash Assistance"
+
+
+
+  },
+  {
+    id: "BL",
+    selected: false,
+    name: "Free or Reduced Price School Meals",
+    program_id: "rpId",
+    program_desc: "Provides low-cost or free school lunches to eligible children.",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Free or Reduced Price School Meals"
+
+
+
+  },
+  {
+    id: "LH",
+    selected: false,
+    name: "Help With Paying Your Heating Bill",
+    program_id: "liId",
+    program_desc: "Low-Income Home Energy Assistance Program (LIHEAP) provides child care financial assistance for eligible families",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About the LIHEAP Program"
+
+
+
+  }
     ,
-    {
-    id:"CI",
-    selected:false,
-    name:"Help With Childcare Costs",
-    program_id:"ccId",
-    program_desc:"Provides child care financial assistance for eligible families",
-    program_link:"www.google.com",
-    program_link_desc:"More Information About Childcare Assistance"
-    
-    
-    
-    }
+  {
+    id: "CI",
+    selected: false,
+    name: "Help With Childcare Costs",
+    program_id: "ccId",
+    program_desc: "Provides child care financial assistance for eligible families",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Childcare Assistance"
+
+
+
+  }
     ,
-    {
-    id:"NA",
-    selected:false,
-    name:"None of the Above",
-    program_id:"naId",
-    program_desc:"",
-    program_link:"",
-    program_link_desc:""
-    
-    
-    
-    }
-    ];
+  {
+    id: "NA",
+    selected: false,
+    name: "None of the Above",
+    program_id: "naId",
+    program_desc: "",
+    program_link: "",
+    program_link_desc: ""
+
+
+
+  }
+  ];
   items: Item[] = [];
-  testSelected={
-      id:"CI",
-      selected:false,
-      name:"Help With Childcare Costs",
-      program_id:"ccId",
-      program_desc:"Provides child care financial assistance for eligible families",
-      program_link:"www.google.com",
-      program_link_desc:"More Information About Childcare Assistance"
-      
-      
-      
+  testSelected = {
+    id: "CI",
+    selected: false,
+    name: "Help With Childcare Costs",
+    program_id: "ccId",
+    program_desc: "Provides child care financial assistance for eligible families",
+    program_link: "www.google.com",
+    program_link_desc: "More Information About Childcare Assistance"
+
+
+
   };
-  itemList=[
+  itemList = [
     {
       "id": 1,
       "name": "Grapes",
@@ -207,7 +220,9 @@ export class AppComponent implements OnInit{
   onItemChange(item: Item): void {
     this.currentSelectedItem = item;
   }
-
+  save() {
+    console.log(this.bioSection.value);
+  }
   onToggleSearch(): void {
     this.showSearch = !this.showSearch;
   }
@@ -234,14 +249,14 @@ export class AppComponent implements OnInit{
   }
   get checkedItems(): Item[] {
     return this.itemList.filter(i => i['checked']);
-}
+  }
   addUser(event: any) {
     console.log('buttons is clicked', event);
   }
-  alert(event: any){
+  alert(event: any) {
     console.log('checkbox', event);
   }
-  onCheckboxChange(id,index,selected){
+  onCheckboxChange(id, index, selected) {
     console.log('id', id);
     console.log('index', index);
     console.log('selected', selected);
@@ -249,7 +264,7 @@ export class AppComponent implements OnInit{
   callbackTextBox(event: any) {
     console.log('Textbox entered', event);
   }
-  validateForm(){
+  validateForm() {
 
   }
   constructor(private appService: AppService) {
