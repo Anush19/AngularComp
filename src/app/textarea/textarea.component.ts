@@ -22,6 +22,7 @@ export class TextareaComponent implements OnInit {
     @Input() showFieldHelpText: boolean = true;
     @Input() showError = false;
     @Input() formCtrlName: string = '';
+    @Input() formGroup: string = '';
     @Output() inputModelChange = new EventEmitter<string>();
 
     restrictInputLength: string = '';

@@ -1,12 +1,13 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss'],
 })
-export class ButtonsComponent  {
-  @Input() public textStyle: string = '';
+export class ButtonsComponent {
+  
+  @Input() public buttonStyle: string = '';
   @Input() public buttonId: string = '';
   @Input() public buttonType: string = '';
   @Input() public buttonLabel: string = '';
@@ -14,10 +15,11 @@ export class ButtonsComponent  {
   @Input() public tooltipText: string = '';
   @Input() public tooltipType: string = 'tooltip';
   @Input() public disabled: boolean = false;
-  @Input() formCtrlName: string = '';
   @Output() onClick = new EventEmitter<string>();
 
   clicked() {
     this.onClick.emit(this.buttonLabel);
   }
+
+
 }

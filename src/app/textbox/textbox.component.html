@@ -1,9 +1,11 @@
+<form class="form-control" [formGroup]="textBoxForm">
 <div class="mb-3 {{textClass}}">
     <label class="form-label {{labelClass}}" for="{{label}}"> {{label}} </label>
-    <span *ngIf="required">{{requiredText}}</span>
+    <span class="text-danger {{requiredTextClass}}" *ngIf="required">{{requiredText}}</span>
     <div>
         <input
                 type="text"
+                #input
                 pattern="{{pattern}}"
                 [required]="required"
                 class="form-control {{textBoxClass}}"
@@ -24,3 +26,4 @@
     </div>
     <div *ngIf="showFieldHelpText" id={{label}} class={{hintClass}}>{{helpText}}</div>
 </div>
+</form>

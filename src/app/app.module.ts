@@ -15,7 +15,7 @@ import { MultiDropdownComponent } from './multi-dropdown/multi-dropdown.componen
 import { HttpClientModule } from '@angular/common/http';
 import { SingleSelectComponent } from './single-select/single-select.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
-import { Tooltip } from './tooltip/tooltip.component';
+import { Tooltip } from './form-test/form-test.component';
 
 @NgModule({
     declarations: [

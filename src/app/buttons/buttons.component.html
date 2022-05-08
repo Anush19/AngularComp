@@ -1,5 +1,5 @@
 <button [type]="buttonType" [disabled]="disabled" [attr.aria-describedby]="buttonId" [id]="buttonId"
-  [ngClass]="textStyle" (click)="clicked()" [attr.data-bs-toggle]="tooltipType" formControlName="{{formCtrlName}}"
+  [ngClass]="buttonStyle" (click)="clicked()" [attr.data-bs-toggle]="tooltipType" 
   [attr.data-bs-placement]="tooltipPosition" title="{{tooltipText}}">
   {{buttonLabel}}
 </button>

@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <app-textbox [textBoxForm]="form" [formCtrlName]="'username'" [label]="'textbox'" [id]="'username'" [maxLength]="4"
+    [minLength]="2" [disabled]="false" [readOnly]="false" [placeholder]="'Test'" [textValue]="'Try this out'"
+    [showError]="true" (inputModelChange)="callbackTextBox($event)"></app-textbox>
+
+</form>
+<span class="form-control">
+  <app-buttons [buttonId]="'save'" [buttonLabel]="'Save'" [buttonType]="'submit'" [buttonStyle]="'btn btn-primary'"
+    (onClick)="submit()"></app-buttons>
+  <app-buttons [buttonId]="'reset'" [buttonLabel]="'Reset'" [buttonType]="'submit'" [buttonStyle]="'btn btn-info'"
+    (onClick)="resetForm()">
+  </app-buttons>
+</span>
